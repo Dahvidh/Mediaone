@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Browse the homepage services and navigate to a service page",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "homepage section order",
+      "hero background video asset path",
+      "video showcase player and controls",
+      "featured service cards",
+      "service detail routing",
+      "shared navigation"
+    ],
+    "description": "Checks the homepage presents the verified service overview and a service card opens its dedicated route.",
+    "steps": [
+      "Open the homepage",
+      "Scroll to Our Featured Services",
+      "Select Live Sports Broadcast"
+    ],
+    "expected": "The live sports broadcast detail page opens with its own heading, descriptive content, contact CTA and shared navigation."
+  },
+  {
+    "name": "Use responsive mobile navigation",
+    "viewport": "mobile",
+    "covers": [
+      "mobile menu open and close",
+      "responsive service navigation",
+      "no horizontal overflow"
+    ],
+    "description": "Checks navigation remains usable on a narrow mobile viewport.",
+    "steps": [
+      "Open the homepage at mobile width",
+      "Open the menu",
+      "Open Our Services and choose TV Production"
+    ],
+    "expected": "The menu can be opened, service routes are accessible by touch, and the TV Production page is readable without horizontal scrolling."
+  },
+  {
+    "name": "Contact form validates and avoids false delivery claims",
+    "viewport": "desktop",
+    "covers": [
+      "contact form required fields",
+      "email validation",
+      "honest submission status"
+    ],
+    "description": "Verifies the contact form blocks invalid input and explains when no delivery backend is configured.",
+    "steps": [
+      "Open Contacts",
+      "Submit the form with required fields empty",
+      "Enter valid-looking details and submit"
+    ],
+    "expected": "Browser validation blocks empty fields; after valid input, the page explicitly explains the demo is not connected to a delivery service."
+  },
+  {
+    "name": "Navigate from About Us to all services and back home",
+    "viewport": "desktop",
+    "covers": [
+      "About Us route",
+      "Our Services index",
+      "three remaining service detail routes",
+      "home navigation"
+    ],
+    "description": "Checks key internal routes and navigation remain functional across multiple page views.",
+    "steps": [
+      "Open About Us from the navigation",
+      "Open Our Services",
+      "Choose League Management",
+      "Return to Homepage"
+    ],
+    "expected": "Each route displays the corresponding page title and content, and the Homepage link returns to the home route."
+  },
+  {
+    "name": "Open the dedicated Watch Our Work portfolio",
+    "viewport": "mobile",
+    "covers": [
+      "Watch Our Work See More button",
+      "dedicated work portfolio route",
+      "project highlights gallery",
+      "behind-the-scenes section",
+      "embedded YouTube videos",
+      "contact call to action"
+    ],
+    "description": "Verifies the homepage See More button opens a dedicated, responsive portfolio page with project imagery, behind-the-scenes content, video highlights, and a contact link.",
+    "steps": [
+      "Open the homepage",
+      "Scroll to Watch Our Work",
+      "Tap See More From Our Work",
+      "Scroll through the highlights and videos"
+    ],
+    "expected": "The dedicated Watch Our Work page opens, shows the project highlight cards and behind-the-scenes section, both supplied YouTube videos, and a working Let’s Work Together link."
+  }
+]
