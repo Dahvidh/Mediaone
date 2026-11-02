@@ -87,6 +87,6 @@
       "Tap See More From Our Work",
       "Scroll through the highlights and videos"
     ],
-    "expected": "The dedicated Watch Our Work page opens, shows the project highlight cards and behind-the-scenes section, both supplied YouTube videos, and a working Let’s Work Together link."
+    "expected": "The dedicated Watch Our Work page opens, shows the project highlight cards and behind-the-scenes section, both existing YouTube videos and all seven added sports highlights, and a working Let’s Work Together link."
   }
 ]
