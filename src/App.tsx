@@ -69,8 +69,8 @@ const SERVICES = [
 ];
 
 const TEAM = [
-  { name: "Abayomi Ayanusi", role: "Founder" },
-  { name: "Cdt. D.O Nnamdi CSc.", role: "Lead Camera Operator" },
+  { name: "Abayomi Ayanusi", role: "Owner & CEO" },
+  { name: "D.O Nnamdi", role: "Lead Camera Operator" },
   { name: "Abayomi Ayanusi", role: "Lead Media Director" },
   { name: "Chibuike Okereke", role: "Camera Operator" },
   { name: "Timilehin Dosunmu", role: "Camera Operator" },
