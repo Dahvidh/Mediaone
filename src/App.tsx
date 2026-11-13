@@ -69,17 +69,13 @@ const SERVICES = [
 ];
 
 const TEAM = [
-  { name: "Abayomi Ayanusi", role: "Founder" },
-  { name: "Cdt. D.O Nnamdi CSc.", role: "Lead Camera Operator" },
-  { name: "Abayomi Ayanusi", role: "Lead Media Director" },
-  { name: "Chibuike Okereke", role: "Camera Operator" },
-  { name: "Timilehin Dosunmu", role: "Camera Operator" },
-  { name: "Femi Olufemi", role: "Audio Visual Mixer/ Media Director" },
-  { name: "Chibuzor Okereke", role: "Lead Supply Chain/Logistics" },
-  //{ name: "David Godfrey", role: "V.P. of Production Design" },
-  //{ name: "Michael Kane", role: "V.P. of Business Development, Hard Goods" },
-  //{ name: "Denise Czarzasty", role: "Special Projects Ambassador" },
-  //{ name: "Kirsten Sweeney", role: "V.P. of Business Development, Soft Goods" },
+  { slug: "abayomi-ayanusi-founder", name: "Abayomi Ayanusi", role: "Founder", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Leads the direction and overall development of Media One Productions." },
+  { slug: "d-o-nnamdi", name: "Cdt. D.O Nnamdi CSc.", role: "Lead Camera Operator", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Leads camera operation and visual coverage during productions." },
+  { slug: "abayomi-ayanusi-media-director", name: "Abayomi Ayanusi", role: "Lead Media Director", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Coordinates media direction and the visual storytelling of productions." },
+  { slug: "chibuike-okereke", name: "Chibuike Okereke", role: "Camera Operator", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Supports production through camera operation and on-location coverage." },
+  { slug: "timilehin-dosunmu", name: "Timilehin Dosunmu", role: "Camera Operator", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Supports camera coverage and the capture of live production moments." },
+  { slug: "femi-olufemi", name: "Femi Olufemi", role: "Audio Visual Mixer / Media Director", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Supports audio-visual mixing and media direction during production." },
+  { slug: "chibuzor-okereke", name: "Chibuzor Okereke", role: "Lead Supply Chain / Logistics", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Leads the logistics and supply coordination that supports production operations." },
 ];
 
 const WORK_HIGHLIGHTS = [
@@ -135,14 +131,17 @@ function App() {
   );
 
   const activeService = SERVICES.find((service) => service.slug === path);
+  const activeTeamMember = TEAM.find((person) => person.slug === path);
   const isHome = path === "home" || path === "";
   const isAbout = path === "about-us";
   const isServices = path === "our-services";
   const isContact = path === "contacts" || path === "contact-us";
   const isWorkPage = path === "watch-our-work";
   const isTeam = path === "team";
+  const isTeamProfile = Boolean(activeTeamMember);
 
   const title =
+    activeTeamMember?.name ||
     activeService?.title ||
     (isAbout
       ? "About Us"
@@ -157,6 +156,7 @@ function App() {
               : "Media One Productions");
 
   const intro =
+    activeTeamMember?.role ||
     activeService?.detail ||
     (isAbout
       ? "We deliver professional broadcasting and media production services."
@@ -307,17 +307,23 @@ function App() {
 
         <div className="team-page-grid">
           {TEAM.map((person, index) => (
-            <article className="team-profile-card" key={`${person.name}-${person.role}`}>
-              <div className="team-profile-top">
+            <Link to={person.slug} className="team-profile-card" key={person.slug}>
+              <div className="team-profile-photo-wrap">
+                {person.image ? (
+                  <img className="team-profile-photo" src={person.image} alt={person.name} loading="lazy" />
+                ) : (
+                  <div className="team-profile-photo-placeholder" aria-label={`Photo placeholder for ${person.name}`}>
+                    {person.name.split(" ").filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase()}
+                  </div>
+                )}
                 <span className="team-profile-index">{String(index + 1).padStart(2, "0")}</span>
-                <span className="team-profile-mark" aria-hidden="true">{person.name.split(" ").filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase()}</span>
               </div>
               <div className="team-profile-copy">
                 <h3>{person.name}</h3>
                 <p>{person.role}</p>
+                <span className="team-profile-cta">View profile <ArrowUpRight size={14} /></span>
               </div>
-              <div className="team-profile-line" />
-            </article>
+            </Link>
           ))}
         </div>
 
@@ -338,6 +344,29 @@ function App() {
       </div>
     </section>
   );
+
+  const TeamProfilePage = () => activeTeamMember ? (
+    <section className="section team-person-section">
+      <div className="wrap team-person-layout">
+        <div className="team-person-photo-frame">
+          {activeTeamMember.image ? (
+            <img src={activeTeamMember.image} alt={activeTeamMember.name} />
+          ) : (
+            <div className="team-person-photo-placeholder">
+              {activeTeamMember.name.split(" ").filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase()}
+            </div>
+          )}
+        </div>
+        <div className="team-person-content">
+          <span className="kicker">MEDIA ONE PRODUCTIONS / TEAM PROFILE</span>
+          <h2>{activeTeamMember.name}</h2>
+          <p className="team-person-role">{activeTeamMember.role}</p>
+          <p>{activeTeamMember.bio}</p>
+          <Link to="team" className="read-link"> <span>Back to the team</span> <ArrowUpRight size={15} /></Link>
+        </div>
+      </div>
+    </section>
+  ) : null;
 
   const WorkPage = () => (
     <section className="section work-gallery-section">
@@ -960,6 +989,8 @@ function App() {
             <WorkPage />
           ) : isTeam ? (
             <TeamPage />
+          ) : isTeamProfile ? (
+            <TeamProfilePage />
           ) : activeService ? (
             <ServiceDetailPage />
           ) : (
