@@ -69,7 +69,7 @@ const SERVICES = [
 ];
 
 const TEAM = [
-  { slug: "abayomi-ayanusi-founder", name: "Abayomi Ayanusi", role: "Founder &CEO / Lead Media Director", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1794584720/0_cb30hy.jpg", bio: "Leads the direction and overall development of Media One Productions." },
+  { slug: "abayomi-ayanusi-founder", name: "Abayomi Ayanusi", role: "Founder & CEO / Lead Media Director", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1794584720/0_cb30hy.jpg", bio: "Leads the direction and overall development of Media One Productions." },
   { slug: "d-o-nnamdi", name: "David Nnamdi", role: "Lead Sports Videographer/Audio Visual Mixer", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1794584911/0_swkxuh.jpg", bio: "Leads camera operation and visual coverage during productions." },
   { slug: "chibuike-okereke", name: "Chibuzor Okereke", role: "Sports Videographer/Audio Visual Mixer", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1794585097/0_lmeknw.jpg", bio: "Supports production through camera operation and on-location coverage." },
   { slug: "timilehin-dosunmu", name: "Timilehin Oluwajoba Daniels", role: "Sports Videographer/Audio Visual Mixer", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1794583561/0_z8hdcw.png", bio: "Supports camera coverage and the capture of live production moments." },
