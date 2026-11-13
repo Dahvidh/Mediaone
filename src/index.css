@@ -240,3 +240,20 @@
   .team-profile-card { min-height: 190px; padding: 22px; }
   .team-page-note { flex-direction: column; align-items: flex-start; margin-top: 35px; }
 }
+
+/* Team directory cards that displays portrait slots and link to individual profiles. */
+.team-profile-card { display:block; padding:0; overflow:hidden; color:inherit; cursor:pointer; }
+.team-profile-photo-wrap { position:relative; height:290px; overflow:hidden; background:#ece9f2; }
+.team-profile-photo, .team-person-photo-frame img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+.team-profile-photo-placeholder, .team-person-photo-placeholder { display:grid; place-items:center; width:100%; height:100%; background:linear-gradient(145deg,#30205f,#6541ad 60%,#d9a900); color:#fff; font-family:Montserrat,sans-serif; font-size:48px; font-weight:800; letter-spacing:2px; }
+.team-profile-photo-wrap .team-profile-index { position:absolute; top:16px; left:17px; padding:7px 10px; color:#30205f; background:#fff; font-size:12px; }
+.team-profile-copy { margin:0; padding:22px 24px 24px; }
+.team-profile-copy h3 { font-size:17px; }
+.team-profile-cta { display:inline-flex; align-items:center; gap:7px; margin-top:16px; color:var(--blue); font-size:11px; font-weight:700; }
+.team-person-layout { display:grid; grid-template-columns:minmax(280px,.8fr) 1.2fr; gap:58px; align-items:center; }
+.team-person-photo-frame { height:540px; overflow:hidden; background:#ece9f2; }
+.team-person-content h2 { margin:14px 0 8px; color:var(--navy); font-family:Montserrat,sans-serif; font-size:clamp(34px,4.5vw,54px); line-height:1.12; }
+.team-person-role { color:var(--blue)!important; font-weight:700; }
+.team-person-content p { max-width:620px; color:var(--muted); font-size:14px; line-height:1.9; }
+.team-person-content .read-link { display:inline-flex; align-items:center; gap:8px; margin-top:18px; }
+@media(max-width:700px) { .team-profile-photo-wrap { height:300px; } .team-person-layout { grid-template-columns:1fr; gap:28px; } .team-person-photo-frame { height:390px; } }
