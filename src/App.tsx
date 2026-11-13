@@ -70,7 +70,7 @@ const SERVICES = [
 
 const TEAM = [
   { slug: "abayomi-ayanusi-founder", name: "Abayomi Ayanusi", role: "Founder", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Leads the direction and overall development of Media One Productions." },
-  { slug: "d-o-nnamdi", name: "Cdt. D.O Nnamdi CSc.", role: "Lead Camera Operator", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Leads camera operation and visual coverage during productions." },
+  { slug: "d-o-nnamdi", name: "David Nnamdi", role: "Lead Camera Operator", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Leads camera operation and visual coverage during productions." },
   { slug: "abayomi-ayanusi-media-director", name: "Abayomi Ayanusi", role: "Lead Media Director", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Coordinates media direction and the visual storytelling of productions." },
   { slug: "chibuike-okereke", name: "Chibuike Okereke", role: "Camera Operator", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Supports production through camera operation and on-location coverage." },
   { slug: "timilehin-dosunmu", name: "Timilehin Oluwajoba Daniels", role: "Camera Operator", image: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1737271087/samples/people/smiling-man.jpg", bio: "Supports camera coverage and the capture of live production moments." },
