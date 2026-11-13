@@ -69,8 +69,8 @@ const SERVICES = [
 ];
 
 const TEAM = [
-  { name: "Abayomi Ayanusi", role: "Owner & CEO" },
-  { name: "D.O Nnamdi", role: "Lead Camera Operator" },
+  { name: "Abayomi Ayanusi", role: "Founder" },
+  { name: "Cdt. D.O Nnamdi CSc.", role: "Lead Camera Operator" },
   { name: "Abayomi Ayanusi", role: "Lead Media Director" },
   { name: "Chibuike Okereke", role: "Camera Operator" },
   { name: "Timilehin Dosunmu", role: "Camera Operator" },
@@ -140,6 +140,7 @@ function App() {
   const isServices = path === "our-services";
   const isContact = path === "contacts" || path === "contact-us";
   const isWorkPage = path === "watch-our-work";
+  const isTeam = path === "team";
 
   const title =
     activeService?.title ||
@@ -151,7 +152,9 @@ function App() {
           ? "Contacts"
           : isWorkPage
             ? "Watch Our Work"
-            : "Media One Productions");
+            : isTeam
+              ? "Our Team"
+              : "Media One Productions");
 
   const intro =
     activeService?.detail ||
@@ -163,7 +166,9 @@ function App() {
           ? "Let’s discuss your next project."
           : isWorkPage
             ? "Highlights from our productions, live broadcasts, and the people and process behind the scenes."
-            : "");
+            : isTeam
+              ? "Meet the people behind our broadcasting, production and operations."
+              : "");
 
   const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -198,7 +203,9 @@ function App() {
                 ? "GET IN TOUCH"
                 : isWorkPage
                   ? "PORTFOLIO & PRODUCTION"
-                  : "OUR SERVICES"}
+                  : isTeam
+                    ? "THE PEOPLE BEHIND THE WORK"
+                    : "OUR SERVICES"}
         </span>
         <h1>{title}</h1>
         <p>{intro}</p>
@@ -279,27 +286,54 @@ function App() {
         </div>
       </div>
 
-      <div className="wrap team-section">
-        <div className="team-section-heading">
-          <span className="kicker">THE PEOPLE BEHIND THE WORK</span>
-          <h2>
-            Meet our <em>team.</em>
-          </h2>
+
+    </section>
+  );
+
+  const TeamPage = () => (
+    <section className="section team-page-section">
+      <div className="wrap">
+        <div className="team-page-intro">
+          <div>
+            <span className="kicker">THE PEOPLE BEHIND THE WORK</span>
+            <h2>People who bring every <em>production to life.</em></h2>
+          </div>
           <p>
-            The experienced people bringing our broadcasting, production and
-            business operations together.
+            Our team brings together the on-the-ground skills and creative
+            coordination needed to deliver live broadcasts, camera work,
+            audio-visual production and operational support.
           </p>
         </div>
-        <div className="team-grid">
+
+        <div className="team-page-grid">
           {TEAM.map((person, index) => (
-            <article className="team-member" key={person.name}>
-              <div className="team-member-number">
-                {String(index + 1).padStart(2, "0")}
+            <article className="team-profile-card" key={`${person.name}-${person.role}`}>
+              <div className="team-profile-top">
+                <span className="team-profile-index">{String(index + 1).padStart(2, "0")}</span>
+                <span className="team-profile-mark" aria-hidden="true">{person.name.split(" ").filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase()}</span>
               </div>
-              <h3>{person.name}</h3>
-              <p>{person.role}</p>
+              <div className="team-profile-copy">
+                <h3>{person.name}</h3>
+                <p>{person.role}</p>
+              </div>
+              <div className="team-profile-line" />
             </article>
           ))}
+        </div>
+
+        <div className="team-page-note">
+          <div>
+            <span className="kicker">ONE TEAM. MANY DISCIPLINES.</span>
+            <h2>Built around <em>the production.</em></h2>
+            <p>
+              From camera operation and media direction to audio-visual
+              mixing and logistics, each role contributes to a coordinated
+              production workflow.
+            </p>
+          </div>
+          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="primary-btn">
+            Work with our team <ArrowUpRight size={16} />
+          </a>
         </div>
       </div>
     </section>
@@ -595,6 +629,7 @@ function App() {
           >
             <Link to="home">Homepage</Link>
             <Link to="about-us">About Us</Link>
+            <Link to="team">Our Team</Link>
             <div className="nav-services">
               <button
                 onClick={() => setServiceOpen(!serviceOpen)}
@@ -923,6 +958,8 @@ function App() {
             <ContactPage />
           ) : isWorkPage ? (
             <WorkPage />
+          ) : isTeam ? (
+            <TeamPage />
           ) : activeService ? (
             <ServiceDetailPage />
           ) : (
@@ -956,6 +993,7 @@ function App() {
             <h3>Quick Links</h3>
             <Link to="home">Homepage</Link>
             <Link to="about-us">About Us</Link>
+            <Link to="team">Our Team</Link>
             <Link to="our-services">Our Services</Link>
             <Link to="contacts">Contacts</Link>
           </div>
