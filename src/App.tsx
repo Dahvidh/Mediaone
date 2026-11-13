@@ -26,6 +26,8 @@ const IMAGES = {
     "https://player.cloudinary.com/embed/?cloud_name=dgqcoefvx&public_id=1599c968-dbc3-4bd6-85a7-163d85fc4b45_eamoeu",
   contact:
     "https://res.cloudinary.com/dgqcoefvx/image/upload/v1791646044/915cad7c-c948-4dae-a11b-9b4e549a644f_avfnkz.jpg",
+  league:
+    "https://res.cloudinary.com/dgqcoefvx/image/upload/v1794585632/0_balgmd.jpg",
   team: "https://res.cloudinary.com/dgqcoefvx/image/upload/",
   footer: `${BASE_URL}/wp-content/uploads/2025/12/ft-bg.png`,
 };
@@ -51,7 +53,7 @@ const SERVICES = [
     title: "League Management",
     slug: "league-management",
     icon: Trophy,
-    image: IMAGES.contact,
+    image: IMAGES.league,
     text: "We provide a way for league operators to manage player and team information, track game results and standings.",
     points: ["Organized league data & results"],
     detail:
