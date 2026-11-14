@@ -28,7 +28,7 @@ const IMAGES = {
     "https://res.cloudinary.com/dgqcoefvx/image/upload/v1791646044/915cad7c-c948-4dae-a11b-9b4e549a644f_avfnkz.jpg",
   league:
     "https://res.cloudinary.com/dgqcoefvx/image/upload/v1794585632/0_balgmd.jpg",
-  team: "https://res.cloudinary.com/dgqcoefvx/image/upload/",
+  team: "https://res.cloudinary.com/dgqcoefvx/image/upload/v1793226600/ff82f774-92f7-4ecb-94bb-2dece837586b_gzroac.jpg",
   footer: `${BASE_URL}/wp-content/uploads/2025/12/ft-bg.png`,
 };
 
@@ -185,7 +185,7 @@ function App() {
         className="page-hero-image"
         style={{
           backgroundImage: `linear-gradient(90deg,rgba(5,13,31,.9),rgba(5,13,31,.45)),url("${
-            isContact ? IMAGES.contact : activeService?.image || IMAGES.aboutSection
+            isContact ? IMAGES.aboutpage : activeService?.image || IMAGES.aboutSection
           }")`,
         }}
       />
