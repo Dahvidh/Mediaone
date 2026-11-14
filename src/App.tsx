@@ -247,7 +247,7 @@ function App() {
   const AboutPage = () => (
     <section className="section">
       <div className="wrap about-page">
-        <img src={IMAGES.aboutPage} alt="Media One Productions team at work" />
+        <img src={IMAGES.team} alt="Media One Productions team at work" />
         <div>
           <span className="kicker">WHO WE ARE</span>
           <h2>
