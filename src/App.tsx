@@ -185,7 +185,7 @@ function App() {
         className="page-hero-image"
         style={{
           backgroundImage: `linear-gradient(90deg,rgba(5,13,31,.9),rgba(5,13,31,.45)),url("${
-            isContact ? IMAGES.league : activeService?.image || IMAGES.league
+            isContact ? IMAGES.aboutPage : activeService?.image || IMAGES.league
           }")`,
         }}
       />
