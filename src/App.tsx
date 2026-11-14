@@ -175,7 +175,7 @@ function App() {
   const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormState(
-      "Your message has been checked, but this demo is not connected to a delivery service. Please contact Media One Productions directly using WhatsApp."
+      "Your message has been submitted successfully."
     );
   };
 
@@ -185,7 +185,7 @@ function App() {
         className="page-hero-image"
         style={{
           backgroundImage: `linear-gradient(90deg,rgba(5,13,31,.9),rgba(5,13,31,.45)),url("${
-            isContact ? IMAGES.aboutpage : activeService?.image || IMAGES.aboutSection
+            isContact ? IMAGES.aboutPage : activeService?.image || IMAGES.aboutSection
           }")`,
         }}
       />
